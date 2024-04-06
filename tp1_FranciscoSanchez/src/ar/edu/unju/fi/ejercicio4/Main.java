@@ -12,14 +12,14 @@ public class Main {
 		System.out.println("Por favor ingrese un numero <entre 0 y 10>: ");
 		int num = scanner.nextInt();
 		
-		if(num<0 || num>10) {
-			System.out.println("Error, el numero ingresado no es valido");
-		}else {
+		if(num>=0 && num<=10) {
 			while(num > 0) {
 				fact = fact * num;
 				num--;
 			}
 			System.out.println("Su factorial es: "+fact);
+		}else {
+			System.out.println("Error, el numero ingresado no es valido");
 		}
 		scanner.close();
 	}	
