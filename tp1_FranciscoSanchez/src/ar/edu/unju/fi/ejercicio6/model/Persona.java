@@ -1,6 +1,7 @@
 package ar.edu.unju.fi.ejercicio6.model;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Persona {
 	private String dni;
@@ -30,9 +31,9 @@ public class Persona {
 
 
 	public int edadPersona(LocalDate fechaNacimiento) {
-		int edad = 0;
 		LocalDate fechaActual = LocalDate.now();
-		edad = fechaActual.getYear() - fechaNacimiento.getYear();
+		Period period = Period.between(fechaNacimiento, fechaActual);
+		int edad = period.getYears();
 		return edad;
 	}
 	
